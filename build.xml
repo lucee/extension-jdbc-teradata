@@ -133,7 +133,7 @@
     <!-- jar -->
     <path id="path.jar">
       <fileset dir="." casesensitive="yes">
-        <include name="*.jar"/>
+        <include name="com.teradata.jdbc*.jar"/>
       </fileset>
     </path>
     <property name="jar" refid="path.jar"/>
@@ -224,9 +224,14 @@ jdbc: "[{'label':'${label}','class':'${className}','bundleName':'${symbolicName}
 </echo>
 
     <!-- copy the jars necessary -->
-    <copy file="${jar}" tofile="${distl}/jars/${jarName}"/>
+    <copy todir="${distl}/jars/">
+      <fileset dir=".">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+    <!-- <copy file="${jar}" tofile="${distl}/jars/${jarName}"/> -->
     
-    <!-- copy the jars necessary -->
+    <!-- copy the component necessary -->
     <copy file="${cfc}" tofile="${distl}/context/admin/dbdriver/${cfcName}"/>
 
     <!-- copy optional logo -->
