@@ -23,6 +23,10 @@ component extends="types.Driver" implements="types.IDatasource" {
 	public function customParameterSyntax() {
 		return {leadingdelimiter:'/',delimiter:'/',separator:'='};
 	}
+
+	public boolean function literalTimestampWithTSOffset() {
+		return true;
+	}
 	
 	public void function onBeforeUpdate() {
 		//form.custom_DatabaseName=form.database;
