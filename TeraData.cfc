@@ -1,7 +1,7 @@
 component extends="types.Driver" implements="types.IDatasource" {
 
-	this.className="com.teradata.jdbc.TeraDriver";
-	this.dsn="jdbc:teradata://{host}";
+	this.className="{class-name}";
+	this.dsn="{connection-string}";
 		
 	this.type.port=this.TYPE_FREE;
 	this.type.database=this.TYPE_FREE;
@@ -43,14 +43,14 @@ component extends="types.Driver" implements="types.IDatasource" {
 	* returns display name of the driver
 	*/
 	public string function getName()  output="no" {
-		return "Teradata Database";
+		return "{label}";
 	}
 
 	/**
 	* returns description for the driver
 	*/
 	public string function getDescription()   output="no" {
-		return "Designed to deliver high performance, diverse queries, in-database analytics and sophisticated workload management, the Teradata Database supports and enables all Teradata Data Warehouse solutions. The Teradata Database outperforms all other vendor analytics solutions and will continue to support your analytics even with a changing competitive landscape or industry advances. With a Teradata Database driven warehouse, you can respond to changing and complex business requirements with greater speed and agility.";
+		return "{description}";
 	}
 
 	/**
